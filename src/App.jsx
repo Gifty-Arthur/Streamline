@@ -1,9 +1,12 @@
 import "./App.css";
+import Login from "./Components/pages/Login";
 
 function App() {
   return (
     <>
-      <div className="text-3xl">hi</div>
+      <div className="bg-black">
+        <Login />
+      </div>
     </>
   );
 }
