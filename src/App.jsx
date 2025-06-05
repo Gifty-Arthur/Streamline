@@ -1,11 +1,12 @@
 import "./App.css";
-import Login from "./Components/pages/Login";
+
+import Home from "./Components/pages/Home";
 
 function App() {
   return (
     <>
-      <div className="bg-black">
-        <Login />
+      <div className="">
+        <Home />
       </div>
     </>
   );
