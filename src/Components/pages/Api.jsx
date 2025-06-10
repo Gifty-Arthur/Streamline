@@ -38,8 +38,8 @@ const MovieRow = () => {
   };
 
   return (
-    <div>
-      <div className="relative w-full bg-black text-white p-6 overflow-hidden">
+    <div className="">
+      <div className="relative w-full bg-black text-white p-10 overflow-hidden ">
         <h2 className="text-2xl font-bold mb-4">Trending Now</h2>
         {/* Scroll Buttons */}
         <button
@@ -115,7 +115,7 @@ const MovieRow = () => {
       {/* cards */}
       <div className="bg-black w-full h-full text-white p-6">
         {/* Heading above the image */}
-        <h1 className="text-2xl font-bold mb-4">More Reasons to Join</h1>
+        <h1 className="text-3xl font-bold mb-4">More Reasons to Join</h1>
 
         {/* Image container */}
         <div className="flex md:flex-row justify-between items-center flex-col">
@@ -127,7 +127,7 @@ const MovieRow = () => {
               <h2 className="text-2xl font-Poppins font-bold">
                 Enjoy on your TV
               </h2>
-              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  -ml-3">
+              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  ">
                 Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
                 Blu-ray players, and more.
               </p>
@@ -147,7 +147,7 @@ const MovieRow = () => {
               <h2 className="text-2xl font-Poppins font-bold tex">
                 Download your shows to watch offline
               </h2>
-              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  -ml-3">
+              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  ">
                 Save your favorites easily and always have something to watch.
               </p>
             </div>
@@ -168,7 +168,7 @@ const MovieRow = () => {
               <h2 className="text-2xl font-Poppins font-bold tex">
                 Watch everywhere
               </h2>
-              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  -ml-3">
+              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  ">
                 Stream unlimited movies and TV shows on your phone, tablet,
                 laptop, and TV.
               </p>
@@ -189,7 +189,7 @@ const MovieRow = () => {
               <h2 className="text-2xl font-Poppins font-bold tex">
                 Create profiles for kids
               </h2>
-              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  -ml-3">
+              <p className="text-[16px] font-normal mt-6 text-[#a7a7b1]  ">
                 Send kids on adventures with their favorite characters in a
                 space made just for them — free with your membership.
               </p>

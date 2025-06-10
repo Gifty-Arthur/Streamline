@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import mbg from "../../assets/images/mbg.png";
 import ogo from "../../assets/images/logo.png";
 import Api from "../pages/Api";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState("English");
 
@@ -63,7 +66,12 @@ const Home = () => {
                 )}
               </div>
               {/* Sign In Button */}
-              <button className="w-[77px] h-[32px] rounded-[4px] bg-[#E50914] text-white">
+              <button
+                Sign
+                in
+                onClick={() => navigate("/login")}
+                className="w-[77px] h-[32px] rounded-[4px] bg-[#E50914] text-white"
+              >
                 Sign in
               </button>
             </div>
@@ -74,10 +82,10 @@ const Home = () => {
               Unlimited movies, TV shows, and more
             </h1>
           </div>
-          <p className="font-Poppins font-bold">
+          <p className="font-Poppins font-bold text-center">
             Start at US$2.99.Cancel anytime
           </p>
-          <p className="-mt-10 font-Poppins">
+          <p className="-mt-10 font-Poppins text-center">
             Ready to watch? Enter your email to create or restart your
             membership.
           </p>

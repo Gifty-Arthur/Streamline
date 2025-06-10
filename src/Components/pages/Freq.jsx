@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Freq = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -41,26 +42,63 @@ const Freq = () => {
       id: 6,
       question: "Is Netflix good for Kids?",
       answer:
-        "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.",
+        "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space. Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.",
     },
   ];
   return (
-    <div className=" h-screen bg-black p-5 ">
+    <div className=" h-full bg-black p-10 ">
       <div className="">
-        <h2 className="text-white mt-10 text-3xl">Frequently Asked Question</h2>
+        <h2 className="text-white mt-10 text-3xl font-bold">
+          Frequently Asked Question
+        </h2>
         {questions.map((q) => (
-          <div key={q.id} className="mb-4 last:mb-0">
+          <div key={q.id} className="mb-3 last:mb-0">
             <button
-              className="w-[1174px] h-[84px] text-left text-xl focus:outline-none p-3 bg-[#2d2d2d] shadow-md flex justify-between item-center mt-2"
+              className="w-[1174px] h-[84px] text-left text-[24px] focus:outline-none text-white  p-3 bg-[#2d2d2d] shadow-md flex justify-between item-center mt-2"
               onClick={() =>
                 setActiveQuestion(activeQuestion === q.id ? null : q.id)
               }
             >
               {q.question}
-              {activeQuestion === q.id ? <FaMinusCircle /> : <FaPlusCircle />}
+              {activeQuestion === q.id ? (
+                <FaMinus size={24} />
+              ) : (
+                <FaPlus size={24} className="" />
+              )}
             </button>
+            <AnimatePresence>
+              {activeQuestion === q.id && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className=" text-white bg-[#2d2d2d] w-[1174px] font-Poppins text-[20px]  mt-0.5"
+                >
+                  <p>{q.answer}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
+      </div>
+      <p className="mt-20 font-Poppins text-white text-center">
+        Ready to watch? Enter your email to create or restart your membership.
+      </p>
+      <div className="flex gap-5 items-center justify-center mt-6">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="Email"
+          className="block w-[490px] h-[56px] rounded-md border px-3 py-1.5 text-base text-white  placeholder:text-gray-400 focus:outline-1 focus:outline-white"
+        />
+        <button
+          type="submit"
+          className="w-[208px] h-[56px] bg-[#e50914] text-white font-semibold text-[24px] rounded-md hover:bg-red-700 transition"
+        >
+          Get Started
+        </button>
       </div>
     </div>
   );
