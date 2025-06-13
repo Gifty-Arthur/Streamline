@@ -2,8 +2,14 @@ import React from "react";
 import login from "../../assets/images/bg.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
+import { handleSubmit } from "../../../Config";
+import { useState } from "react";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [setError] = useState("");
+
   return (
     <div>
       <div className="relative  w-full h-screen">
@@ -28,7 +34,10 @@ const Login = () => {
                   </h2>
                 </div>
                 <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-                  <form action="#" method="POST" className="space-y-6">
+                  <form
+                    onSubmit={(e) => handleSubmit(e, setError)}
+                    className="space-y-6"
+                  >
                     <div className="flex justify-center">
                       <input
                         id="email"
@@ -37,7 +46,7 @@ const Login = () => {
                         required
                         autoComplete="email"
                         placeholder="Email"
-                        className="block w-[315px] h-[56px] rounded-md border px-3 py-1.5 text-base text-black outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-white"
+                        className="block w-[315px] h-[56px] rounded-md border px-3 py-1.5 text-base text-white outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-white"
                       />
                     </div>
                     <div className="flex justify-center">
@@ -48,19 +57,22 @@ const Login = () => {
                         required
                         placeholder="Password"
                         autoComplete="current-password"
-                        className="block w-[315px] h-[56px] rounded-md border px-3 py-1.5 text-base text-black outline-1 outline-white placeholder:text-gray-400 focus:outline-2 focus:outline-white"
+                        className="block w-[315px] h-[56px] rounded-md border px-3 py-1.5 text-base text-white outline-1 outline-white placeholder:text-gray-400 text-white focus:outline-2 focus:outline-white"
                       />
                     </div>
                     {/* button */}
                     <div className="flex justify-center">
                       <button
+                        onClick={() => navigate("/Who")}
                         type="submit"
                         className="w-[314px] h-[40px] bg-[#e50914] text-white font-semibold rounded-md hover:bg-red-700 transition"
                       >
                         Sign In
                       </button>
                     </div>
-                    <h1 className="text-xl text-[#acb3b3] font-Poppins">OR</h1>
+                    <h1 className="text-xl text-[#acb3b3] font-Poppins text-center ">
+                      OR
+                    </h1>
                     <div className="flex justify-center">
                       <button
                         type="submit"
@@ -90,9 +102,12 @@ const Login = () => {
                       <h2 className=" font-Poppins text-[16px] text-[#8B8988]">
                         New to Netflix?
                       </h2>
-                      <h2 className="text-[16px] text-white font-Poppins">
+                      <button
+                        className="text-[16px] text-white font-Poppins cursor-pointer hover:text-gray-400"
+                        onClick={() => navigate("/")}
+                      >
                         Sign up now
-                      </h2>
+                      </button>
                     </div>
                     <div>
                       <p className="text-[16px] text-[#8B8988]">

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState("English");
 
@@ -67,10 +66,8 @@ const Home = () => {
               </div>
               {/* Sign In Button */}
               <button
-                Sign
-                in
-                onClick={() => navigate("/login")}
-                className="w-[77px] h-[32px] rounded-[4px] bg-[#E50914] text-white"
+                onClick={() => navigate("/Login")}
+                className="w-[77px] h-[32px] rounded-[4px] bg-[#E50914] text-white cursor-pointer hover:bg-red-500"
               >
                 Sign in
               </button>
@@ -99,6 +96,7 @@ const Home = () => {
               className="block w-[400px] h-[56px] rounded-md border px-3 py-1.5 text-base text-white  placeholder:text-gray-400 focus:outline-2 focus:outline-white"
             />
             <button
+              onClick={() => navigate("/Finish")}
               type="submit"
               className="w-[208px] h-[56px] bg-[#e50914] text-white font-semibold text-[24px] rounded-md hover:bg-red-700 transition"
             >
